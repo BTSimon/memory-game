@@ -60,8 +60,9 @@ button:disabled {
     width: 500px;
     max-width: 90%;
     min-height: 350px;
+    height: auto;
 
-    margin: 20px auto;
+    margin: 10px auto;
 
     background: white;
     border-radius: 12px;
@@ -74,7 +75,7 @@ button:disabled {
     position: relative;
     overflow: hidden;
 
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -95,17 +96,38 @@ button:disabled {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     padding: 20px;
     box-sizing: border-box;
+
+    overflow-y: auto;
+}
+
+#questionArea h2 {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+#selectionContainer {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 12px;
+
+    justify-items: center;
+
+    margin: 20px 0;
 }
 
 .selectionRow {
     display: flex;
     gap: 10px;
-    margin: 8px 0;
 }
 
 .red {
