@@ -81,7 +81,6 @@ button:disabled {
 #shape {
     width: 150px;
     height: 150px;
-    transition: all 0.2s;
 }
 
 .hidden {

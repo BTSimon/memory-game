@@ -53,7 +53,6 @@ async function playSequence(showTime) {
 
         shapeDiv.className = '';
 
-        await new Promise(resolve => setTimeout(resolve, 250));
     }
 
     askQuestion();
