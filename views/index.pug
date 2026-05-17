@@ -1,0 +1,70 @@
+doctype html
+html
+    head
+        title Memory Game
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='/index.css')
+    body
+        h1 Memóriajáték
+
+        .settings
+            h2 Beállítások
+
+            label Elemek száma:
+            input#sequenceLength(type='number' value='15' min='5' max='100')
+
+            br
+            br
+
+            label Megjelenési idő (ms):
+            input#showTime(type='number' value='1500' min='300' max='10000')
+
+            br
+            br
+
+            label Visszakérdezett elemek száma:
+            input#questionCount(type='number' value='3' min='2' max='10')
+
+            br
+            br
+
+            h3 Alakzatok
+
+            label
+                input.shapeToggle(type='checkbox' value='square' checked)
+                | Négyzet
+
+            label
+                input.shapeToggle(type='checkbox' value='star' checked)
+                | Csillag
+
+            label
+                input.shapeToggle(type='checkbox' value='ring' checked)
+                | Gyűrű
+
+            label
+                input.shapeToggle(type='checkbox' value='triangle' checked)
+                | Háromszög
+
+            label
+                input.shapeToggle(type='checkbox' value='circle' checked)
+                | Kör
+
+            br
+            br
+
+            button#startBtn Start
+
+        #gameArea
+            #shape
+
+            #questionArea.hidden
+                h2#question
+
+                #selectionContainer
+
+                br
+                button#submitBtn Beküldés
+                p#result
+
+        script(src='/game.js')

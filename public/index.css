@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    padding-top: 30px;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.settings {
+    background: white;
+    width: 500px;
+    max-width: 90%;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.settings h2,
+.settings h3 {
+    margin-top: 0;
+}
+
+label {
+    margin: 0 8px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    cursor: pointer;
+    background: #333;
+    color: white;
+    border: none;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #555;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#gameArea {
+    width: 500px;
+    max-width: 90%;
+    min-height: 350px;
+
+    margin: 20px auto;
+
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#shape {
+    width: 150px;
+    height: 150px;
+    transition: all 0.2s;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#questionArea {
+    position: absolute;
+    inset: 0;
+
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.selectionRow {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
+
+.green {
+    background: green;
+}
+
+.yellow {
+    background: gold;
+}
+
+
+.square {
+    border-radius: 0;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+
+.triangle {
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 150px solid;
+}
+
+.triangle.red {
+    border-bottom-color: red;
+}
+
+.triangle.blue {
+    border-bottom-color: blue;
+}
+
+.triangle.green {
+    border-bottom-color: green;
+}
+
+.triangle.yellow {
+    border-bottom-color: gold;
+}
+
+.ring {
+    background: transparent !important;
+    border-radius: 50%;
+    border: 20px solid;
+    box-sizing: border-box;
+}
+
+.ring.red {
+    border-color: red;
+}
+
+.ring.blue {
+    border-color: blue;
+}
+
+.ring.green {
+    border-color: green;
+}
+
+.ring.yellow {
+    border-color: gold;
+}
+
+
+.star {
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+}
+
+.star.red {
+    background: red;
+}
+
+.star.blue {
+    background: blue;
+}
+
+.star.green {
+    background: green;
+}
+
+.star.yellow {
+    background: gold;
+}
+
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
