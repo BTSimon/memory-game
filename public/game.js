@@ -26,11 +26,31 @@ function randomItem(arr) {
 function generateSequence(length) {
     sequence.length = 0;
 
-    for (let i = 0; i < length; i++) {
-        sequence.push({
-            color: randomItem(colors),
-            shape: randomItem(currentShapes)
+    const possibleCombinations = [];
+
+    currentShapes.forEach(shape => {
+        colors.forEach(color => {
+            possibleCombinations.push({
+                color,
+                shape
+            });
         });
+    });
+
+    shuffle(possibleCombinations);
+
+    const maxLength = Math.min(length, possibleCombinations.length);
+
+    for (let i = 0; i < maxLength; i++) {
+        sequence.push(possibleCombinations[i]);
+    }
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
@@ -158,7 +178,16 @@ startBtn.addEventListener('click', async () => {
         return;
     }
 
-    const sequenceLength = Number(sequenceLengthInput.value);
+    let sequenceLength = Number(sequenceLengthInput.value);
+
+    const maxPossible = currentShapes.length * colors.length;
+
+    if (sequenceLength > maxPossible) {
+        sequenceLength = maxPossible;
+        sequenceLengthInput.value = maxPossible;
+
+        alert(`Maximum ${maxPossible} elem lehetséges a jelenlegi paramétereknek megfelelően.`);
+    }
     const showTime = Number(showTimeInput.value);
 
     startBtn.disabled = true;
